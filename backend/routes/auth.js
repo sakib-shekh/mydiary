@@ -42,7 +42,7 @@ router.post(
     console.log(1);
     const authToken = await jwt.sign(data, JWTsecret);
     res.json({
-      status: "ok",
+      status: 200,
       message: authToken,
     });
   }
@@ -83,8 +83,8 @@ router.post(
         },
       };
       const authToken = await jwt.sign(data, JWTsecret);
-      res.json({
-           authToken
+      return res.json({status:200,
+          token:authToken
       });
    
   }
